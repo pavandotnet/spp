@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-theme25.css">
+</head>
+<body>
+    <div class="form-body">
+        
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder simple-info">
+                    <!-- <div><img src="images/graphic6.svg" alt=""></div> -->
+                    <div><h3>Student Payment Platfrom</h3></div>
+                    <div><p>Card Details</p></div>
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3 class="form-title">You’re almost there</h3>
+                        <ul class="nav nav-tabs" id="stepsTabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="step1-tab" data-toggle="tab" href="#step1" role="tab" aria-controls="step1" aria-selected="true">Step1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="step2-tab" data-toggle="tab" href="#step2" role="tab" aria-controls="step2" aria-selected="false">Step2</a>
+                            </li>
+                        </ul>
+                        <form>
+                            <div class="tab-content" id="stepsTabContent">
+                                <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
+                                    <div class="form-subtitle">Enter payment details</div>
+                                    <label>Card number</label>
+                                    <div class="input-with-ccicon">
+                                        <input type="text" class="form-control input-credit-card" placeholder="1234 1234 1234 1234">
+                                        <i id="ccicon"></i>
+                                    </div>
+                                    <div class="inline-el-holder">
+                                        <div class="inline-el">
+                                            <label>Expiry date</label>
+                                            <input type="text" class="form-control sm-content" placeholder="MM/YY">
+                                        </div>
+                                        <div class="inline-el">
+                                            <label>CVV</label>
+                                            <input type="text" class="form-control sm-content" placeholder="123">
+                                        </div>
+                                    </div>
+                                    <div class="inline-el-holder">
+                                        <div class="inline-el">
+                                            <label>Country</label>
+                                            <input type="text" class="form-control" placeholder="Bahrain">
+                                        </div>
+                                        <div class="inline-el">
+                                            <label>Billing ZIP</label>
+                                            <input type="text" class="form-control sm-content" placeholder="12345">
+                                        </div>
+                                    </div>
+                                    <div class="form-button text-right">
+                                        <button id="btn-next" class="ibtn btn-tab-next">Next</button>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2-tab">
+                                    <label style="font-weight: 700;">Student Name: </label> Vinay<br/>
+                                    <label style="font-weight: 700;">Registration Number: </label> 1AI13CS056<br/>
+                                    <label style="font-weight: 700;">University: </label> Government Degree College<br/>
+                                    <label style="font-weight: 700;">Semester: </label> 2nd Semester<br/>
+                                    <label style="font-weight: 700;">Degree: </label> B.Sc
+                                    <div class="separator"></div>
+                                    <label style="font-weight: 700;">Fee Type: </label> Examination Fee<br/>
+                                    <label style="font-weight: 700;">Year of Passing: </label> 2024<br/>
+                                    <label style="font-weight: 700;">Semester: </label> 6<br/>
+                                    <label style="font-weight: 700;">Total Amount: </label> INR 13000
+                                    <div class="form-button">
+                                        <button id="submit" type="submit" class="ibtn">Process payment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/cleave.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+// credit card 
+var cleaveCreditCard = new Cleave(".input-credit-card", {
+  creditCard: true,
+  onCreditCardTypeChanged: function(type) {
+    type = type.split("15")[0];
+    $('.input-with-ccicon #ccicon').removeClass();
+    if(type!="unknown"){
+        if(type=="diners"){
+            $('.input-with-ccicon #ccicon').addClass('fab fa-cc-diners-club');
+        }else{
+            $('.input-with-ccicon #ccicon').addClass('fab fa-cc-'+type);
+        }
+    }
+  }
+});
+</script>
+
+<script type="text/javascript">
+    $("form").submit(function(){
+      window.location.href = "payment-summary.html";
+      return false;
+    });
+</script>
+
+</body>
+</html>

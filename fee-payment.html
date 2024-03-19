@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="css/iofrm-theme24.css">
+
+    <style>
+        .form-content .form-button .ibtn{
+            color: #fff;
+            background-color: #0093FF;
+        }
+
+        input, textarea, select { 
+  margin-top: 10px; display: block;
+}
+
+input[type=radio] {
+  display: inline;
+}
+    </style>
+</head>
+<body>
+    <div class="form-body on-top">
+        
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder simple-info">
+                    <!-- <div><img src="images/graphic6.svg" alt=""></div> -->
+                    <div><h3>Student Payment Platfrom</h3></div>
+                    <div><p>Fee Details</p></div>
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <form>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <label>Semester: </label>
+                                <select class="form-control">
+                                        <option>--Select Semester--</option>
+                                        <option>I</option>
+                                        <option>II</option>
+                                        <option>III</option>
+                                        <option>IV</option>
+                                        <option>V</option>
+                                        <option>VI</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <label>Year of Passing: </label>
+                                 <select class="form-control">
+                                        <option>--Select Year of Passing--</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <label>Payment Category: </label>
+                                    <select class="form-control">
+                                        <option>--Select Payment Category--</option>
+                                        <option>Application Fee</option>
+                                        <option>Academic Certificate Fee</option>
+                                        <option>Challenge Valuation Fee</option>
+                                        <option>Convocation Fee</option>
+                                        <option>Ph.D Fee</option>
+                                        <option>PG Admission Fee</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Registration Number">
+                                </div> -->
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                   <label>Fee Total:</label>
+                                    <input type="text" class="form-control" placeholder="Discipline" value="13000" disabled>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                   <label>Remarks:</label>
+                                    <input type="text" class="form-control" placeholder="Enter Remarks" style="border: none;border-bottom: 1px solid #0093FF;">
+                                </div>
+                            </div> 
+                            <div class="row top-padding">
+                                <div class="col-12 col-sm-6">
+                                    <hr style="width:100%;" />
+                                </div>
+                            </div>
+                            <div class="row top-padding">
+                                <div class="col-12 col-sm-6">
+                                    <h5>Enter Your Details:</h5>
+                                </div>
+                            </div>
+                            <div class="row top-padding">
+                                <div class="col-12 col-sm-6">
+                                    <input type="radio" id="Individual" name="type" value="Individual">
+                                    <label for="Individual">Individual</label><br>
+                                    <input type="radio" id="Corporate" name="type" value="Corporate">
+                                    <label for="Corporate">Organization/Corporate</label><br>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:10px;">
+                                <div class="col-12 col-sm-6">
+                                    Name: <input type="text" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    Date of Birth:
+                                <input type="datetime-local" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    Mobile Number: <input type="text" class="form-control" placeholder="Mobile Number">
+                                    <p style="font-size: 11px;font-style: italic;">On successful completion of the payment you'll receive the transaction reference number to this number</p>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    Email Id: <input type="email" class="form-control" placeholder="Email Id">
+                                    <p style="font-size: 11px;font-style: italic;">On successful completion of the payment you'll receive the transaction reference number to this email id</p>
+                                </div>
+                            </div>
+                            <div class="row top-padding">
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-button text-left">
+                                        <button id="submit" type="submit" class="ibtn less-padding">Pay Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+    $("form").submit(function(){
+      window.location.href = "payment.html";
+      return false;
+    });
+</script>
+</body>
+</html>
